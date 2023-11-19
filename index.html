@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MileStone Exam 1</title>
+  </head>
+  <body>
+    <style>
+      /* Style for the toggle switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default checkbox */
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Style for the slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+/* Styling for the slider's appearance when checked */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Styling for the checked state */
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.progress-bar {
+  width: 0;
+  height: 30px;
+  background-color: #4caf50;
+}
+
+    </style>
+    <div
+      id="question-1"
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        gap: 20px;
+        margin-left: 42%;
+      "
+    >
+      <h2 style="margin-left: 40px">Question-1</h2>
+
+      <input
+        id="pswrd"
+        type="password"
+        placeholder="Write Password"
+        value=""
+        style="height: 30px; padding-left: 15px"
+      />
+
+      <input
+        id="cnfm-pswrd"
+        type="password"
+        placeholder="Confirm Password"
+        value=""
+        style="height: 30px; padding-left: 15px"
+      />
+
+      <button class="check" onclick="myfun()">check</button>
+    </div>
+
+    <hr />
+    <!-- question-2 -->
+
+    <!-- <div id="question-5"> -->
+ 
+
+      <!-- <input id="namecap" type="text" value=""> -->
+      <!-- <input type="text" id="vowelsname" value="" onchange="voname()"> -->
+
+
+       <!-- question= 18 -->
+<h2 style="margin-left: 580px">Question  18</h2>
+
+<div class="togglequest">
+  <h2 id="toggleheading">The most affordable learning
+    platform</h2>
+   
+    <label class="toggle-switch">
+      <input type="checkbox" id="toggle" onclick="togglechange()">
+      <span class="slider"></span>
+    </label>
+</div>
+
+
+
+<h2 style="margin-left: 580px">Question  19</h2>
+
+
+<form id="loginForm">
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email"><br><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+
+  <input type="submit" value="Submit" id="submitButton">
+</form>
+<p id="errorMessage"></p>
+
+
+
+<!-- question-22 -->
+<h2 style="margin-left: 580px;">Question = 22</h2>
+
+<div class="progress-container">
+  <div class="progress-bar" id="myBar"></div>
+</div>
+
+<!-- question 23 -->
+
+<h2 style="margin-left: 580px;">Question = 23</h2>
+
+<button onclick="changeColor()">Change Color</button>
+
+
+
+<h2 style="margin-left: 580px">Question-8</h2>  
+
+
+    </div>
+
+    <script>
+
+// question= 1
+
+      function myfun() {
+        var pswrd = document.getElementById("pswrd").value;
+        var cnfmpswrd = document.getElementById("cnfm-pswrd").value;
+
+        if (pswrd == cnfmpswrd) {
+          console.log("Password Matched");
+        } else {
+          console.log(
+            "Password didn't match. Password validation unsuccessful"
+          );
+        }
+      }
+
+      // question-2
+      console.log("Answer= 2 solve")
+
+
+      function calculator(num1, num2, operator) {
+        let result;
+
+        switch (operator) {
+          case "+":
+            result = num1 + num2;
+            break;
+          case "-":
+            result = num1 - num2;
+            break;
+          case "*":
+            result = num1 * num2;
+            break;
+          case "/":
+            result = num1 / num2;
+            break;
+          default:
+            console.log("Invalid operator");
+            return;
+        }
+
+        console.log(`The result of ${num1} ${operator} ${num2} is: ${result}`);
+      }
+
+      // Example usage:
+      calculator(5, 3, "+");
+      calculator(10, 4, "-");
+
+      // question-3
+      console.log("Answer= 3 solve")
+
+
+      function mixColors(color1, color2) {
+        let result;
+
+        switch (color1) {
+          case "red":
+            switch (color2) {
+              case "blue":
+                result = "purple";
+                break;
+              case "yellow":
+                result = "orange";
+                break;
+              default:
+                result = "Invalid color combination";
+            }
+            break;
+          case "blue":
+            switch (color2) {
+              case "red":
+                result = "purple";
+                break;
+              case "yellow":
+                result = "green";
+                break;
+              default:
+                result = "Invalid color combination";
+            }
+            break;
+          case "yellow":
+            switch (color2) {
+              case "red":
+                result = "orange";
+                break;
+              case "blue":
+                result = "green";
+                break;
+              default:
+                result = "Invalid color combination";
+            }
+            break;
+          default:
+            result = "Invalid color combination";
+            break;
+        }
+
+        console.log(
+          `The resulting color of mixing ${color1} and ${color2} is: ${result}`
+        );
+      }
+
+      // Example usage:
+      mixColors("red", "blue");
+      mixColors("red", "yellow");
+      mixColors("blue", "yellow");
+      mixColors("green", "blue");
+
+    //   question-4
+console.log("Answer= 4 solve")
+
+
+
+    let marks = [10, 12, 14, 16, 18]
+    let highestMarks = Math.max(...marks)
+    console.log("Highest marks is " + highestMarks);
+
+
+    // question-5
+    console.log("Answer= 5 solve")
+
+   
+
+    function capitalizeFirstLetter(nameString) {
+    if (nameString.length === 0) {
+        return ''; // Return an empty string for an empty input
+    }
+
+    return nameString.charAt(0).toUpperCase() + nameString.slice(1);
+}
+
+
+let name = "dedufortl"
+let capitalizedString = capitalizeFirstLetter(name);
+console.log(capitalizedString); 
+
+// question= 6
+
+console.log("Answer= 6 solve")
+
+
+
+var vowelsname = document.getElementById('vowelsname')
+
+
+var vowname = "bharat"
+var vowels = 'aeiou'
+
+
+
+
+  var count = 0
+for (let i = 0; i < vowname.length ; i++) {
+   
+    if (vowels.includes(vowname[i])) {
+      count++
+    }
+}
+
+console.log(count)
+
+
+
+
+
+// console.log(vovname)
+
+// question 7
+console.log("Answer= 7 solve")
+
+var q7arr = ["apple", "mango", "pineapple" , "apple", "kiwi", "mango"]
+
+function uniqueitems(arr) {
+
+  return [...new Set(q7arr)]
+  
+}
+
+console.log(uniqueitems())
+
+
+// question-8
+
+// console.log("Answer= 8 solve")
+
+for (i=6; i>=1; i--){
+  for (let j = 1; j < i; j++)
+  {
+    document.write(" &nbsp; ");  
+  }
+  for(k=5; k>=i; k--)
+  {
+    document.write("*")
+  }
+  document.write("<br>")
+
+}
+
+// question-9
+
+console.log("Answer= 9 solve")
+
+let divi3 = [12, 92, 33, 42, 55, 26, 27, 28, 29]
+
+for (let i = 0; i < divi3.length; i++ ){
+  if(divi3[i] % 3 == 0){
+    console.log(divi3[i])
+  }
+}
+
+
+// question= 10
+
+console.log("Answer= 10 solve")
+
+let bugarray = [3, 9, 11, 5]
+
+for(let i = 0; i < bugarray.length; i++){
+  console.log(bugarray[i]*2)
+
+}
+
+// question= 11
+
+console.log("Answer= 11 solve")
+
+
+function unitconverter(){
+  let celcius = 4
+
+   output = celcius * (9/5) + 32
+
+
+   console.log(`${celcius}° celcius =  ${output} fahrenheits`)
+
+
+}
+unitconverter()
+
+// question= 12
+
+console.log("Answer= 12 solve")
+
+function calculateRentalCost(daysRented, carType) {
+
+  let rentalCostPerDay = 4000;
+
+  switch (carType) {
+    case 'economy':
+    rentalCostPerDay: 4000;
+      
+      break;
+
+      case 'midsize':
+      rentalCostPerDay: 10000;
+
+      break;
+
+      case 'luxury':
+      rentalCostPerDay:20000;
+
+      break;
+
+    default:
+    return 'Invalid car type. Please choose from Economy, Midsize, or Luxury.';
+    }
+
+    const totalCost = rentalCostPerDay * daysRented;
+    return `Total rental cost for ${carType} car for ${daysRented} days is Rs. ${totalCost}/-`;
+}
+
+// Example usage:
+const days = 5; // Number of days rented
+const car = 'economy'; // Type of car: Economy, Midsize, or Luxury
+
+const cost = calculateRentalCost(days, car);
+console.log(cost);
+
+// question= 13
+
+console.log("Answer= 13 solve")
+
+function billSplitter() {
+
+  let bill = 1000
+  persons = 4
+
+  amountPayByEachPerson = bill/persons
+
+  console.log(`amount to be pay by each person ${amountPayByEachPerson} Rs.`)
+  
+}
+billSplitter()
+
+// question= 14
+
+console.log("Answer= 14 solve")
+  
+
+  var customerItems = [250, 200 , 100, 100]
+
+
+ sumall = () => {
+
+  let sum = 0
+
+  for(let i = 0; i < customerItems.length; i++){
+sum +=  customerItems[i] 
+
+  }
+  return sum
+}
+console.log(sumall());
+
+// question= 15
+
+console.log("Answer= 15 solve")
+
+discount = () => {
+  let price = 1000
+  console.log(`Price = ${price} Rs`)
+  let discountPercent = 30
+  console.log(`discountPercentage = ${discountPercent}% Rs`)
+  let finalPrice = price*discountPercent/100
+  console.log(`Your final Price = ${finalPrice}Rs`)
+}
+discount()
+
+// question= 16
+
+console.log("Answer= 16 solve")
+
+const randrun = function () {
+  let randomnum = Math.floor(Math.random()*100) 
+  return console.log(randomnum)
+}
+
+randrun()
+
+// question= 17
+
+console.log("Answer= 17 solve")
+
+const customerAccount = {
+  name: 'John',
+  balance: 1000, // Initial balance
+};
+
+// Function to deposit money into the account
+function deposit(amount) {
+  if (amount > 0) {
+    this.balance += amount;
+    console.log(`Deposit of $${amount} successful. New balance: $${this.balance}`);
+  } else {
+    console.log('Invalid deposit amount.');
+  }
+}
+
+// Function to withdraw money from the account
+function withdraw(amount) {
+  if (amount > 0 && amount <= this.balance) {
+    this.balance -= amount;
+    console.log(`Withdrawal of $${amount} successful. New balance: $${this.balance}`);
+  } else if (amount > this.balance) {
+    console.log('Insufficient funds.');
+  } else {
+    console.log('Invalid withdrawal amount.');
+  }
+}
+
+
+customerAccount.deposit = deposit;
+customerAccount.withdraw = withdraw;
+
+// Example usage:
+console.log(`Initial balance: $${customerAccount.balance}`);
+
+customerAccount.deposit(500); 
+customerAccount.withdraw(200); 
+customerAccount.withdraw(1500);
+customerAccount.deposit(-100); 
+
+console.log(`Final balance: $${customerAccount.balance}`);
+
+
+// question= 18
+
+console.log("Answer= 18 solve")
+
+let toggle = document.getElementById("toggle")
+let toggleheading = document.getElementById("toggleheading")
+
+function togglechange() {
+
+  if (toggle = "active") {
+
+    toggleheading.innerHTML = "PW Skills"
+    }
+  else{
+    toggleheading.innerHTML = "toggleheading"
+  }
+}
+
+
+
+
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Fetching values from input fields
+  const emailValue = document.getElementById('email').value;
+  const passwordValue = document.getElementById('password').value;
+  const errorMessage = document.getElementById('errorMessage');
+
+  // Regular expression pattern to validate email
+  const emailPattern = /\S+@\S+\.\S+/;
+
+  // Check if email contains "@" symbol and password has a minimum length of 8 characters
+  if (emailPattern.test(emailValue) && passwordValue.length >= 8) {
+    // If both conditions are met, display success message
+    errorMessage.textContent = 'Valid email and password!';
+    errorMessage.style.color = 'green';
+  } else {
+    // If either condition is not met, display error message
+    errorMessage.textContent = 'Invalid email or password!';
+    errorMessage.style.color = 'red';
+  }
+});
+
+// question-22
+
+window.onscroll = function() { myFunction() };
+
+function myFunction() {
+  const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+// question= 23
+
+function changeColor() {
+  const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.backgroundColor = randomColor;
+}
+
+
+
+    </script>
+  </body>
+</html>
